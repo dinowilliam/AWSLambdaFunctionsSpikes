@@ -14,10 +14,9 @@ namespace AWSLambdaFunctionsSimpleSpike
             
             var requestorObject = new RequestorObject();
 
-            var lambdaFunction = new AccountUsageRequestor(new AmazonLambdaClient(), context);
-            lambdaFunction.Initialize();
+            var lambdaFunction = new AccountUsageRequestor(new AmazonLambdaClient(), context);            
 
-            requestorObject.Input = input.ToUpper();
+            requestorObject.Input = input.ToString();
             requestorObject.AccountUsage = lambdaFunction.GetAccountUsage();
 
             return requestorObject;

@@ -13,16 +13,9 @@ namespace AWSLambdaFunctionsSimpleSpike.Requestors
 
         public AccountUsageRequestor(AmazonLambdaClient lambdaClient, ILambdaContext context)
         {
-
             _lambdaClient = lambdaClient;
             _context = context;
-        }
-
-        public async void Initialize()
-        {
-            AWSSDKHandler.RegisterXRayForAllServices();
-            await CallLambda();
-        }
+        }        
 
         public async Task<AccountUsage> GetAccountUsage()
         {

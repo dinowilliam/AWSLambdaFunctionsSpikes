@@ -1,19 +1,37 @@
-using Xunit;
-using Amazon.Lambda.Core;
 using Amazon.Lambda.TestUtilities;
+using Xunit;
 
-namespace AWSLambda1.Tests;
+namespace AWSLambdaFunctionsSimpleSpike.Tests;
 
 public class FunctionTest
 {
     [Fact]
-    public void TestSampleFunction()
+    public void Function_WhenHandlerCall_IsValid()
     {
-        //var function = new Function();
-        var context = new TestLambdaContext();        
-        //var response = function.FunctionHandler(request, context);
+        //Arrange
+        var function = new Function();
+        var context = new TestLambdaContext();
+        var request = "Hello World from Lambda";
+        
+        //Act
+        var response = function.Handler(request, context);
+        
+        //Assert
+        Assert.Contains(request, response.Input);
+    }
 
-        //Assert.Equal(200, response.StatusCode);
-        //Assert.Contains("Hello World from Lambda", response.Body);
+    [Fact]
+    public void Function_WhenHandlerCall_IsInvalid()
+    {
+        //Arrange
+        var function = new Function();
+        TestLambdaContext context = null;
+        var request = "Hello World from Lambda";
+
+        //Act
+        var response = function.Handler(request, context);
+
+        //Assert
+        Assert.Null(response.AccountUsage);
     }
 }
