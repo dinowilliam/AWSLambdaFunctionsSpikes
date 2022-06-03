@@ -1,0 +1,27 @@
+using Amazon.Lambda;
+using Amazon.Lambda.Core;
+using AWSLambdaFunctionsSimpleSpike.Pocos;
+using AWSLambdaFunctionsSimpleSpike.Requestors;
+
+// Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
+[assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
+
+namespace AWSLambdaFunctionsSimpleSpike
+{
+    public class Function {
+
+        public RequestorObject Handler(string input, ILambdaContext context)  {
+            
+            var requestorObject = new RequestorObject();
+
+            var lambdaFunction = new AccountUsageRequestor(new AmazonLambdaClient(), context);
+            lambdaFunction.Initialize();
+
+            requestorObject.Input = input.ToUpper();
+            requestorObject.AccountUsage = lambdaFunction.GetAccountUsage();
+
+            return requestorObject;
+        }
+
+    }
+}

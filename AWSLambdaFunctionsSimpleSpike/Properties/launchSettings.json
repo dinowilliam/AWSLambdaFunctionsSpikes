@@ -1,0 +1,18 @@
+{
+  "exclude": [
+    "**/bin",
+    "**/bower_components",
+    "**/jspm_packages",
+    "**/node_modules",
+    "**/obj",
+    "**/platforms"
+  ],
+  "profiles": {
+    "Mock Lambda Test Tool": {
+      "commandName": "Executable",
+      "executablePath": "%USERPROFILE%\\.dotnet\\tools\\dotnet-lambda-test-tool-6.0.exe",
+      "commandLineArgs": "--port 5050",
+      "workingDirectory": ".\\bin\\Debug\\net6.0"
+    }
+  }
+}
