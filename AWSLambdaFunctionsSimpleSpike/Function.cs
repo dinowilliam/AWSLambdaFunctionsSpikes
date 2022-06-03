@@ -14,10 +14,10 @@ namespace AWSLambdaFunctionsSimpleSpike
             
             var requestorObject = new RequestorObject();
 
-            var lambdaFunction = new AccountUsageRequestor(new AmazonLambdaClient(), context);            
+            var accountUsageRequestor = new AccountUsageRequestor(new AmazonLambdaClient(), context);            
 
             requestorObject.Input = input.ToString();
-            requestorObject.AccountUsage = lambdaFunction.GetAccountUsage();
+            requestorObject.AccountUsage = accountUsageRequestor.GetAccountUsage();
 
             return requestorObject;
         }
