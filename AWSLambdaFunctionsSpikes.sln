@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSLambdaFunctionsSimpleSpike", "AWSLambdaFunctionsSimpleSpike\AWSLambdaFunctionsSimpleSpike.csproj", "{07B1B37C-6D61-43FD-842D-4A1441FB3FC7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSLambdaFunctionsSimpleSpike.Tests", "AWSLambdaFunctionsSpikes.Tests\AWSLambdaFunctionsSimpleSpike.Tests.csproj", "{BA338AB9-AFD3-4E8C-9518-D04E0053B3B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSLambdaFunctionsSpikes.Tests", "AWSLambdaFunctionsSpikes.Tests\AWSLambdaFunctionsSpikes.Tests.csproj", "{BA338AB9-AFD3-4E8C-9518-D04E0053B3B8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSLambdaFunctionsUsingSQLSpike", "AWSLambdaFunctionsUsingSQLSpike\AWSLambdaFunctionsUsingSQLSpike.csproj", "{6C9F3D76-DC8C-4F81-A354-D2D522050D64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{BA338AB9-AFD3-4E8C-9518-D04E0053B3B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA338AB9-AFD3-4E8C-9518-D04E0053B3B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA338AB9-AFD3-4E8C-9518-D04E0053B3B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C9F3D76-DC8C-4F81-A354-D2D522050D64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C9F3D76-DC8C-4F81-A354-D2D522050D64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C9F3D76-DC8C-4F81-A354-D2D522050D64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C9F3D76-DC8C-4F81-A354-D2D522050D64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

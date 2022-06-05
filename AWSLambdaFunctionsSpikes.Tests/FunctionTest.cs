@@ -1,10 +1,14 @@
 using Amazon.Lambda.TestUtilities;
 using Xunit;
 
-namespace AWSLambdaFunctionsSimpleSpike.Tests;
+namespace AWSLambdaFunctionsSpikes.Tests;
+
+using AWSLambdaFunctionsSimpleSpike;
 
 public class FunctionTest
 {
+  
+
     [Fact]
     public void Function_WhenHandlerCall_IsValid()
     {

@@ -2,7 +2,7 @@ using Xunit;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.TestUtilities;
 
-namespace AWSLambdaFunctionsSimpleSpike.Tests;
+namespace AWSLambdaFunctionsSpikes.Tests;
 
 public class AccountUsageRequestorTest
 {
