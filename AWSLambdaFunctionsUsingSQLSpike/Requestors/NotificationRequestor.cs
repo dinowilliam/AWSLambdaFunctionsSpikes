@@ -21,7 +21,7 @@ namespace AWSLambdaFunctionsUsingSQLSpike.Requestors {
             List<Notification> notificationList;
 
             try {
-                string conString = "data source=.; database=StudentDB; integrated security=SSPI";
+                string conString = "Data Source=sqlserverrdsintance.czn91fflzv57.sa-east-1.rds.amazonaws.com, 1433; Initial Catalog=Northwind; User ID=admin; Password='benfatto&123!'";
 
                 var sqlConnection = new SqlConnection(conString);
                 var getNotificationCommand = new GetNotificationsCommand(1, sqlConnection);

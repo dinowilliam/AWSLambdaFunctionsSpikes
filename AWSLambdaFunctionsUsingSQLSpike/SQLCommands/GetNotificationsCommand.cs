@@ -19,7 +19,8 @@ namespace AWSLambdaFunctionsUsingSQLSpike.SQLCommands {
 
         private string SQL {
 
-            get => @"SELECT NotificationID, 
+            get => @"SELECT 
+                            NotificationID, 
                             OrderID, 
                             ProductID, 
                             Description, 
