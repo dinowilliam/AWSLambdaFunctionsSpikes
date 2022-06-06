@@ -4,16 +4,19 @@ using Newtonsoft.Json;
 using System.Data.SqlClient;
 
 namespace AWSLambdaFunctionsUsingSQLSpike.Requestors {
-
+    using AWSLambdaFunctionsUsingSQLSpike.Configuration;
     using AWSLambdaFunctionsUsingSQLSpike.Pocos;
     using AWSLambdaFunctionsUsingSQLSpike.SQLCommands;
+    using Microsoft.Extensions.Configuration;
 
     public class NotificationRequestor {
 
         private static ILambdaContext _context;
+        private static IConfiguration _configuration;
 
-        public NotificationRequestor(ILambdaContext context) {
+        public NotificationRequestor(ILambdaContext context, IConfiguration configuration) {
             _context = context;
+            _configuration = configuration;
         }
 
         public async Task<List<Notification>> GetNotifications() {
@@ -21,10 +24,9 @@ namespace AWSLambdaFunctionsUsingSQLSpike.Requestors {
             List<Notification> notificationList;
 
             try {
-                string conString = "Data Source=sqlserverrdsintance.czn91fflzv57.sa-east-1.rds.amazonaws.com, 1433; Initial Catalog=Northwind; User ID=admin; Password='benfatto&123!'";
-
-                var sqlConnection = new SqlConnection(conString);
-                var getNotificationCommand = new GetNotificationsCommand(1, sqlConnection);
+                                                
+                var sqlConnection = new SqlConnection(_configuration.GetConnectionString("lambdaConString"));
+                var getNotificationCommand = new GetNotificationsCommand(10250, sqlConnection);
 
                 notificationList = getNotificationCommand.Execute();
             }

@@ -12,7 +12,8 @@
       "commandName": "Executable",
       "executablePath": "%USERPROFILE%\\.dotnet\\tools\\dotnet-lambda-test-tool-6.0.exe",
       "commandLineArgs": "--port 5050",
-      "workingDirectory": ".\\bin\\Debug\\net6.0"
+      "workingDirectory": ".\\bin\\Debug\\net6.0",
+      "sqlDebugging": true
     }
   }
 }
