@@ -13,5 +13,5 @@
     "function-memory-size" : 256,
     "function-timeout"     : 30,
     "function-handler"     : "AWSLambdaFunctionsSimpleSpike::AWSLambdaFunctionsSimpleSpike.Function::Handler",
-    "framework"            : "net6.0",    
+    "framework"            : "net6.0"    
 }
