@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace AWSLambdaFunctionsUsingSQLSpike.SQLCommands {
-    
+
     using AWSLambdaFunctionsUsingSQLSpike.Pocos;
     using AWSLambdaFunctionsUsingSQLSpike.SQLCommands.Contracts;
 

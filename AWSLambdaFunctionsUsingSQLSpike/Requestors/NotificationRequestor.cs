@@ -4,22 +4,20 @@ using Newtonsoft.Json;
 using System.Data.SqlClient;
 
 namespace AWSLambdaFunctionsUsingSQLSpike.Requestors {
-    using AWSLambdaFunctionsUsingSQLSpike.Configuration;
     using AWSLambdaFunctionsUsingSQLSpike.Pocos;
+    using AWSLambdaFunctionsUsingSQLSpike.Requestors.Contracts;
     using AWSLambdaFunctionsUsingSQLSpike.SQLCommands;
     using Microsoft.Extensions.Configuration;
 
-    public class NotificationRequestor {
-
-        private static ILambdaContext _context;
+    public class NotificationRequestor : INotificationRequestor {
+        
         private static IConfiguration _configuration;
 
-        public NotificationRequestor(ILambdaContext context, IConfiguration configuration) {
-            _context = context;
+        public NotificationRequestor(IConfiguration configuration) {
             _configuration = configuration;
         }
 
-        public async Task<List<Notification>> GetNotifications() {
+        public async Task<List<Notification>> GetNotifications(ILambdaContext context) {
 
             List<Notification> notificationList;
 
@@ -35,7 +33,7 @@ namespace AWSLambdaFunctionsUsingSQLSpike.Requestors {
             }
             finally {
                 LambdaLogger.Log("ENVIRONMENT VARIABLES: " + JsonConvert.SerializeObject(System.Environment.GetEnvironmentVariables()));
-                LambdaLogger.Log("CONTEXT: " + JsonConvert.SerializeObject(_context));
+                LambdaLogger.Log("CONTEXT: " + JsonConvert.SerializeObject(context));
             }
 
             return notificationList;
